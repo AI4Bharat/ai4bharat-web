@@ -93,6 +93,36 @@ Creating open source NLP tools, models and datasets for Indian languages using s
 
 {{</ faq >}}
 
+{{< faq "✋🏼 Indian Sign Language - ASSIST" >}}
+Collecting data and developing tools for recognizing Indian Sign Language, specifically in workplace contexts. Funded by Microsoft's AI For Accessibility Grant, 2021.
+
+<a href="https://sign-language.ai4bharat.org" class="btn btn-primary btn-sm">Website</a>
+<a href="https://github.com/AI4Bharat/INCLUDE-MS-Teams-Integration" class="btn btn-primary btn-sm">Teams Integration</a>
+
+<table style="border-collapse: inherit; border-spacing: 20px;">
+  <tr><th>Members</th><th>Mentors</th></tr>
+  <tr>
+    <td>
+      <table><tr>
+        <td align="center"><a href="https://github.com/GokulNC"><img src="https://avatars0.githubusercontent.com/u/10559293?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Gokul</b></sub></a></td>
+        <td align="center"><a href="https://github.com/abdur-cool"><img src="https://avatars.githubusercontent.com/u/59405879?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Abdur</b></sub></a></td>
+        <td align="center"><a href="https://github.com/Prem-kumar27"><img src="https://avatars.githubusercontent.com/u/14202523?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Prem</b></sub></a></td>
+        <td align="center"><a href="https://github.com/roshni-poddar"><img src="https://avatars.githubusercontent.com/u/41294786?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Roshni</b></sub></a></td>
+        <td align="center"><a href="https://github.com/aravint-annamalai"><img src="https://avatars.githubusercontent.com/u/58785632?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Aravint</b></sub></a></td>
+        <td align="center"><a href="http://github.com/gRohith327"><img src="https://avatars0.githubusercontent.com/u/36641932?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Rohith</b></sub></a></td>
+        <td align="center"><a href="https://github.com/Ads97"><img src="https://avatars.githubusercontent.com/u/20744245?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Advaith</b></sub></a></td>
+      </tr></table>
+    </td>
+    <td>
+      <table><tr>
+        <td align="center"><a href="https://www.cse.iitm.ac.in/~pratyush"><img src="https://avatars0.githubusercontent.com/u/49815493?v=4" width="50px;" class="rounded-circle"/><br /><sub><b>Pratyush</b></sub></a></td>
+      </tr></table>
+    </td>
+  </tr>
+</table>
+
+{{</ faq >}}
+
 {{< faq "<span style='background-color: #FBAB60'>भ </span>	IndicTrans" >}}
 
 Creating open source machine translation models and parallel corpora (Samānantar) for Indian languages.
@@ -202,13 +232,13 @@ Generating fonts using A.I. for Indian Language-Scripts using style-transfer GAN
 
 {{</ faq >}}
 
-{{< faq "🖖🏼 Indian Sign Language" >}}
+{{< faq "🖖🏼 Indian Sign Language - INCLUDE" >}}
 
-Developing tools for recognizing and transcribing Indo Sign Language.
+Created India's largest Isolated Indian Sign Language dataset - INCLUDE. 
 
-<a href="https://sign-language.ai4bharat.org" class="btn btn-primary btn-sm">Website</a>
-<a href="https://github.com/AI4Bharat/INCLUDE" class="btn btn-primary btn-sm">Code</a>
+<a href="https://ai4bharat.org/include-dataset" class="btn btn-primary btn-sm">Website</a>
 <a href="https://dl.acm.org/doi/10.1145/3394171.3413528" class="btn btn-primary btn-sm">Paper</a>
+<a href="https://github.com/AI4Bharat/INCLUDE" class="btn btn-primary btn-sm">Code</a>
 
 <table style="border-collapse: inherit; border-spacing: 20px;">
   <tr><th>Members</th><th>Mentors</th></tr>
