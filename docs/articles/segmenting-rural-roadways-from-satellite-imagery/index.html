@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-in"><head>
+  <meta charset="utf-8">
+  <title>Challenge: Segmenting Rural Roadways from Satellite Imagery</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Interconnectivity in rural and semi-urban areas is required to understand progress of road construction and also for planning expansions.">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link href="/scss/style.min.css" rel="stylesheet" media="screen"/>
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  
+  
+  <meta property="og:image" content="/images/projects/segmenting-rural-roadways-from-satellite-imagery/Thumbnail.png" />
+  
+  <meta property="og:title" content="Challenge: Segmenting Rural Roadways from Satellite Imagery" />
+<meta property="og:description" content="Interconnectivity in rural and semi-urban areas is required to understand progress of road construction and also for planning expansions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/segmenting-rural-roadways-from-satellite-imagery/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2019-06-01T10:07:17&#43;06:00" />
+<meta property="article:modified_time" content="2019-06-01T10:07:17&#43;06:00" />
+
+
+  
+  
+  
+</head><body><!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="/">
+        
+        <img width="200px" class="img-fluid" style="width: 5em;" src="/images/logo.png" alt="AI4Bhārat"></a>
+        
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/articles">Articles</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/events">Events</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/join-us">Support us</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        
+        <a href="https://github.com/AI4Bharat" class="btn btn-sm btn-primary ml-3"><i class="ti-github"></i> GitHub</i></a>
+        
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+
+
+
+<section class="section pb-0">
+  <div class="container text-center">
+      <h1 class="display-3">Challenge: Segmenting Rural Roadways from Satellite Imagery</h1>
+      
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="content"><p>Interconnectivity in rural and semi-urban areas is required to understand progress of road construction and also for planning expansions. Segmenting khachcha roads from satellite imagery is remains an unsolved challenge.</p>
+<hr>
+<h3 id="problem-statement">Problem Statement</h3>
+<p>Segmentation of Indian Rural Roadways and extraction of road networks using Satellite Imagery for path planning and other applications.</p>
+<h3 id="why-is-this-relevant-in-the-indian-context">Why is this relevant in the Indian context</h3>
+<ul>
+<li>India is a rapidly developing country, and Roadways play a very significant role in the development. Developments of sectors like Manufacturing industries, agricultural industries involve proper planning based on the availability of transportation facilities. The roadways are inevitable contributors. Thus Proper understanding of road networks becomes mandatory. Roadways in India is increasing exponentially as a necessity, and requires faster ways of updating the existing databases and monitoring for changes with minimal or no human involvement is expected.</li>
+</ul>
+<figure style="text-align: center">
+  <img src="../../images/projects/segmenting-rural-roadways-from-satellite-imagery/NH_lengths.png" style="width:60%;">
+  <figcaption>Source: data.gov.in</figcaption>
+</figure>
+<ul>
+<li>Around 70% of Indians live in rural areas (according to 2011 census). It is mandatory to develop proper infrastructure for the entire population, which is carried out using Pradhan Mantri Gram Sadak Yojana. GIS updates of such road regions require a level of manual effort, for India (3.28 Million km2 ) continuous update of changes is difficult.</li>
+</ul>
+<figure style="text-align: center">
+  <img src="../../images/projects/segmenting-rural-roadways-from-satellite-imagery/road_lengths.png" style="width:60%;">
+  <figcaption>Source: data.gov.in</figcaption>
+</figure>
+<ul>
+<li>For rural road management identification of existing roads in rural areas for with traditional techniques is difficult since around 40% of rural roads are unsurfaced (like dirt roads) [based on 2015 stats], this makes the problem even worse and requires a lot of man-hours to be invested.</li>
+</ul>
+<figure style="text-align: center">
+  <img src="../../images/projects/segmenting-rural-roadways-from-satellite-imagery/surfaced_roads.png" style="width:60%;">
+  <figcaption>Source: data.gov.in</figcaption>
+</figure>
+<ul>
+<li>For Disaster Management and Recovery,  Roadways are critical for the immediate and first-level response. In this scenario, exciting infrastructures would have been damaged. It becomes important to identify existing functional routes post the disaster and identify the alternative routes, to help in accelerated recovery actions.</li>
+<li>India has a large area of ghats and mountainous regions, which are prone to frequent landslides, it is difficult yet crucial to obtain information at the earliest. There are areas near coastal regions and Central India are prone to cyclones and flooding fall under high to very high risk zones.</li>
+</ul>
+<table style="border: none;">
+  <tr>
+    <td>
+        <figure style="text-align: center">
+            <img src="../../images/projects/segmenting-rural-roadways-from-satellite-imagery/landslides.png">
+        </figure>
+    </td>
+    <td width="44%">
+      <figure style="text-align: center">
+          <img src="../../images/projects/segmenting-rural-roadways-from-satellite-imagery/wind.png">
+      </figure>
+    </td>
+  </tr>
+</table>
+<p>Source: <a href="https://www.undp.org/">United Nations Development Program</a> - <a href="https://www.undp.org/content/dam/india/docs/disaster_management_in_india.pdf">Disaster management in India</a></p>
+<p>In these scenarios existing GIS databases are of little or no use since changes in terrain and geographical features would have changed post calamity. So only means of immediate insights can be obtained if through satellite imagery.</p>
+<h3 id="data-availability-and-collection">Data Availability And Collection</h3>
+<p>These are list of existing satellite images with corresponding road networks annotated datasets available for public use</p>
+<ol>
+<li>SpaceNet Challenge <a href="https://spacenetchallenge.github.io/datasets/spacenetRoads-summary.html">Dataset</a></li>
+</ol>
+<ul>
+<li>contains roads annotated for satellite images crops of Shanghai, Khartoum, Paris, and Vegas</li>
+<li>the data covers around 3011 sq. km and length of 8677 km of annotated roads</li>
+</ul>
+<ol start="2">
+<li>DeepGlobe Dataset [12]</li>
+</ol>
+<ul>
+<li>Roadways annotated images captured over Thailand, Indonesia, and India</li>
+<li>road dataset consists of a total of 8570 images and spans a total land area of 2220 sq. km</li>
+</ul>
+<ol start="3">
+<li>International Society for Photogrammetry and Remote Sensing (<a href="https://www.isprs.org/publications/archives.aspx">ISPRS</a> )- semantic labeling benchmark dataset</li>
+<li>University of Toronto - contains <a href="https://www.cs.toronto.edu/~vmnih/data/">dataset</a> road for Massachusetts </li>
+<li>Open Street Maps</li>
+</ol>
+<ul>
+<li>Not a dataset, but a crowd-sourced collection of map tags from where one can get the info on road networks</li>
+</ul>
+<p>Most of the state-of-the-art papers on this topic seem to use at least one of these datasets, with refinement of ground truth if necessary.</p>
+<p><a href="https://www.usgs.gov/land-resources/nli/landsat">Landsat</a> of USA and <a href="https://sentinel.esa.int/web/sentinel/home">Sentinel</a> of ESA provides free satellite imagery for all location on earth.</p>
+<p>For Indian maps, we can use our own ISRO satellite’s data, called <a href="https://bhuvan.nrsc.gov.in/bhuvan_links.php">Bhuvan GIS Data</a>. After registering on the website, it’s possible to select a region of interest in the maps, called a tile, and download the corresponding Satellite imagery along with the GIS data for the tile(s).</p>
+<p>However, the GIS data does not include roadways, which is crucial as the ground truth of our model. We may have to manually annotate the roadways, or use some existing models for creating an initial outline of the road maps to start with, on which we have to do a lot of refinement.</p>
+<p>To overcome this, as an initial step, we can use the road map info that’s already crowd-sourced in the OpenStreetMaps <a href="https://wiki.openstreetmap.org/wiki/India:Roads">for India</a>. The tag format can be found <a href="https://wiki.openstreetmap.org/wiki/India:Tags/Highway">here </a>for roadways.</p>
+<p>Note: OSM have collected Indian satellite imagery from different sources and combined them all according to the latest ones with high resolution. The list of all sources for Indian Satellite Imagery can be found <a href="https://wiki.openstreetmap.org/wiki/India/Data_sources">here</a>.</p>
+<p>In addition, we have another source of getting map data, called <a href="http://wikimapia.org/">WikiMapia</a>. WikiMapia is owned by a private company, but provides data that can be used for free. They use satellite imageries directly from Google Maps, on which they add other layers, in which roadlines is one.</p>
+<p>Although the only way of collecting data from WikiMapia is their APIs, the roadways in WikiMapia have better annotations than OSM, and has good rural area coverage. But the APIs seem to be quite slow, and it might take a very large amount of time to get a good amount of data for covering the entire Indian subcontinent.</p>
+<h3 id="existing-work---research-and-practice">Existing Work - Research And Practice</h3>
+<p>Prior to deep learning the procedure for road extraction [1] roughly follows steps</p>
+<ol>
+<li>Pre processing</li>
+<li>Detection of edges corresponding to roads</li>
+<li>Road following </li>
+<li>Grouping of road primitives</li>
+</ol>
+<p>Lot of research has been put in crafting state of art algorithms to solve each piece of these steps by means computer vision and statistical methods. Ensembles of algorithms were also used to high accuracy and fault-tolerant methods [2]. Geometric-probabilistic models are used to automatically extract road networks like map (maximum aposteriori probability) estimation [4], Monte Carlo dynamics [5], kalman and particle filters [6]. </p>
+<p>For evaluating and validating the results metrics [3] like completeness, correctness, redundancy, gaps in connectivity.</p>
+<p>Few of the research works have explored and incorporated learning algorithms, e.g random forests along with Conditional Random Fields [7]. A simple Artificial Neural network (FC) was used to pixel-level classification [8] for class road or not road, where RGB data of pixels was fed to the network.</p>
+<p>Then with the advent of Deep Neural networks, end to end systems entirely with neural nets and pre/post-processing stages is being explored. <a href="http://deepglobe.org/">DEEPGLOBE</a>, challenge hosted by CVPR18 workshop, here the problem is addressed as pixel-wise segmentation problem and uses U-Net[11] based architecture for models. The model with top result uses LinkNet-based architecture with dilated convolutions called D-Linknet [9] . Multiple challenges hosted by <a href="https://spacenetchallenge.github.io/Challenges/challengesSummary.html">SpaceNet</a> [10] have notable contributions with good accuracy.</p>
+<h3 id="open-technical-challenges">Open Technical Challenges</h3>
+<p>Satellite Imagery processing for Geographical understanding is done for more than 4 decades. Identifying and segmenting Road networks is one of the important problems addressed. But all the processing methods and algorithms are hand-crafted for a specific purpose under specific contexts with pieces of information added by human operators. This requires manpower and human intervention.</p>
+<ol>
+<li>Computer Vision based processing methods relies on prior knowledge and understanding of the locality (obtained by other means like GIS). Having such prior knowledge in all the scenarios is not feasible (e.g at times like natural disaster). Some of them also require human intervention for initializing certain parameters, validating and correcting the outputs from time to time</li>
+<li>Deep Learning models generally learns inherent details and underlying correlations among them, and generalize to the context. This seems to offer a valid solution, but there are few challenges to be addressed like:</li>
+</ol>
+<ul>
+<li>Good, Clean dataset with proper annotation of road maps and This must be as diverse as possible covering wide range contexts. Context of farmlands, deserts, sub-urban, forest mountain regions, riverbanks and delta regions, all are different.</li>
+<li>Deep learning Model should be able to generalize between different contexts since many rural areas and towns include small chunks of residences similar to urban regions surrounded or intertwined with farmlands and forestry</li>
+<li>DL Model should be able to understand the features in the given image. In satellite images, all the objects of interest will be small so it is important for the model to understand contexts and objects from pixel information to properly classify which are roads and which are not.</li>
+<li>Measuring Accuracy and Loss functions requires metrics different from conventional Classification and Segmentation problems. Traditional metrics used for evaluating road networks extraction tasks in CV methods, should be adapted to suit learning algorithms and incorporated Deep Learning methods.</li>
+</ul>
+<h3 id="technical-milestones">Technical Milestones</h3>
+<ol>
+<li>
+<p>Survey on all existing approaches, including both CV-based methods and deep learning based end-to-end solutions.</p>
+</li>
+<li>
+<p>Survey on all available sources of annotated data. &laquo; In Progress &raquo;</p>
+</li>
+</ol>
+<p>To Do:</p>
+<ol start="3">
+<li>
+<p>Planning on how to start collecting data, and the legal access to use them for open sourcing.</p>
+</li>
+<li>
+<p>Organizing the satellite data along with the tags for all the required regions.</p>
+</li>
+<li>
+<p>Analyzing and cleaning the dataset, and processing it to add missing roads, etc. using automatic annotation if possible, which should be subject to further refinement.</p>
+</li>
+<li>
+<p>Creating an API-level interaction to access the dataset (that is, the satellite images and corresponding annotations), providing a good abstraction for training, etc.</p>
+</li>
+<li>
+<p>Designing a robust training architecture to train a deep learning based model for the task of road segmentation, and the pre-processing techniques involved to refine the predictions.</p>
+</li>
+<li>
+<p>If there are any challenges/difficulties specific to rural roadways, address them individually if possible to make the model robust to any type of roads.</p>
+</li>
+<li>
+<p>Test the designed network on a systematic basis to evaluate the performance and decide the fitness of the model for real-time deployment to generate the entire road way map of India.</p>
+</li>
+<li>
+<p>Optional: Create an Android app for the resulting Maps generated out of the model, which will be very helpful for rural navigation.</p>
+</li>
+</ol>
+<h3 id="references">References</h3>
+<p>[1] Fortier, M.A., Ziou, D., &amp; Armenakis, C. (2002). Survey of Work on Road Extraction in Aerial and Satellite Images.</p>
+<p>[2] McKeown Jr, D.M. &amp; Denlinger, J.L.. (1988). Cooperative methods for road tracking in aerial imagery. 662 - 672. 10.1109/CVPR.1988.196307. </p>
+<p>[3] Heipke, C., Mayer, H.J., Wiedemann, C., &amp; Jamet, O. (1998). Empirical Evaluation of Automatically Extracted Road Axes.</p>
+<p>[4] Barzohar, M., &amp; Cooper, D. B. (1996). Automatic finding of main roads in aerial images by using geometric-stochastic models and estimation. IEEE Transactions on Pattern Analysis and Machine Intelligence, 18(7), 707-721.</p>
+<p>[5] Stoica, R., Descombes, X., &amp; Zerubia, J. (2004). A Gibbs point process for road extraction from remotely sensed images. International Journal of Computer Vision, 57(2), 121-136.</p>
+<p>[6] Movaghati, S., Moghaddamjoo, A., &amp; Tavakoli, A. (2010). Road extraction from satellite images using particle filtering and extended Kalman filtering. IEEE Transactions on geoscience and remote sensing, 48(7), 2807-2817.</p>
+<p>[7] Wegner, J. D., Montoya-Zegarra, J. A., &amp; Schindler, K. (2013). A higher-order CRF model for road network extraction. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1698-1705).</p>
+<p>[8] Mokhtarzade, M., &amp; Zoej, M. V. (2007). Road detection from high-resolution satellite images using artificial neural networks. International journal of applied earth observation and geoinformation, 9(1), 32-40.</p>
+<p>[9] Zhou, L., Zhang, C., &amp; Wu, M. (2018, June). D-linknet: Linknet with pretrained encoder and dilated convolution for high resolution satellite imagery road extraction. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops (pp. 182-186). IEEE.</p>
+<p>[10] Van Etten, A. (2019). City-scale Road Extraction from Satellite Imagery. arXiv preprint arXiv:1904.09901.</p>
+<p>[11] Ronneberger, O., Fischer, P., &amp; Brox, T. (2015, October). U-net: Convolutional networks for biomedical image segmentation. In International Conference on Medical image computing and computer-assisted intervention (pp. 234-241). Springer, Cham.</p>
+<p>[12] Demir, I., Koperski, K., Lindenbaum, D., Pang, G., Huang, J., Basu, S., &hellip; &amp; Raska, R. (2018, June). Deepglobe 2018: A challenge to parse the earth through satellite images. In 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) (pp. 172-17209). IEEE.</p>
+<h3 id="current-team">Current Team</h3>
+<table style="width:50%; margin-right:50%;">
+  <tr>
+    <td align="center" >
+      <img src="../../images/pratyush.png" width="75px;" class="rounded-circle" style="margin-bottom: 0;"/>
+      <br/><b>Mentor</b>
+    </td>
+    <td align="center" style="vertical-align: middle;"> <h4>
+      Pratyush Kumar
+      <br/>
+      IIT-Madras
+      <br/>
+      (<a href="https://www.linkedin.com/in/pratyush-kumar-8844a8a3/" style="color: orange">LinkedIn</a>)
+    </h4></td>
+  </tr>
+  <tr>
+    <td align="center" >
+      <img src="https://github.com/JosephGeoBenjamin.png" width="75px;" class="rounded-circle" style="margin-bottom: 0;"/>
+      <br/><b>Lead</b>
+    </td>
+    <td align="center" style="vertical-align: middle;"> <h4>
+      Joseph Geo
+      <br/>
+      ML Engineer, One Fourth Labs
+      <br/>
+      (<a href="https://www.linkedin.com/in/joseph-geo-benjamin/" style="color: orange">LinkedIn</a>)
+    </h4></td>
+  </tr>
+  <tr>
+    <td align="center" >
+      <img src="https://github.com/GokulNC.png" width="75px;" class="rounded-circle" style="margin-bottom: 0;"/>
+      <br/><b>Lead</b>
+    </td>
+    <td align="center" style="vertical-align: middle;"> <h4>
+      Gokul NC
+      <br/>
+      ML Engineer, One Fourth Labs
+      <br/>
+      (<a href="https://www.linkedin.com/in/gokulnc/" style="color: orange">LinkedIn</a>)
+    </h4></td>
+  </tr>
+</table>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="bg-light section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">Organization</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/articles/case/">About Us</a></li>
+          
+          <li><a href="/projects">Active Projects</a></li>
+          
+          <li><a href="/events">Events</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">Projects</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/join-us">Apply to join</a></li>
+          
+          <li><a href="/articles">Articles</a></li>
+          
+          <li><a href="https://github.com/AI4Bharat">Contribute Directly</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">More</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          
+          <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+          
+          <li><a href="https://ai4bharat.squarespace.com">Old Website</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <a class="d-block mb-3" href="/"><img width="200px"  class="img-fluid" src="/images/logo.png" alt="AI4Bhārat"></a>
+        <p class="mb-4">Address: IIT-Madras Research Park, Taramani, Chennai-600113</p>
+        
+        <ul class="list-inline social-icons">
+          
+          <li class="list-inline-item"><a href="https://www.facebook.com/onefourthlabs"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a href="https://twitter.com/ai4bharat"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a href="https://www.linkedin.com/showcase/ai4bharat"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="border-top border-default text-center py-4 mt-4">
+      <small class="content"><a href="https://github.com/AI4Bharat/ai4bharat.org">Made in ❤️ with open-source by AI4Bhārat</a></small>
+    </div>
+  </div>
+</footer>
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script></body>
+
+</html>

@@ -1,6 +1,8 @@
-## AI4Bharat's Website
+## AI4Bhārat's Website
 
+Source code for ai4bharat.org website.
 
+Old website link: https://ai4bharat.squarespace.com (Archived)
 
 ### Usage
 

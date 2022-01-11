@@ -62,7 +62,7 @@ projects:
       image : "images/digital-india.jpg"
       content : "Generating fonts using A.I. for Indic scripts."
 
-    - name : "📄🔍 Indic OCR"
+    - name : "📄🔍 [Indic OCR](https://ocr.ai4bharat.org)"
       content : "Coming Soon - Indic Scene Text Recognition and Document Extraction"
     
     - name : "🗣💬 Indian Speech2Text"

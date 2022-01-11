@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-in"><head>
+  <meta charset="utf-8">
+  <title>Challenge: Signboard Translation from Vernacular Indian Languages</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Can computer vision and natural language processing be put to translate sign boards on the fly making travel more accessible?">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.83.1" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link href="/scss/style.min.css" rel="stylesheet" media="screen"/>
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  
+  
+  <meta property="og:image" content="/images/projects/sign-board/Thumbnail.jpg" />
+  
+  <meta property="og:title" content="Challenge: Signboard Translation from Vernacular Indian Languages" />
+<meta property="og:description" content="Can computer vision and natural language processing be put to translate sign boards on the fly making travel more accessible?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/sign-board/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2019-06-01T10:07:17&#43;06:00" />
+<meta property="article:modified_time" content="2019-06-01T10:07:17&#43;06:00" />
+
+
+  
+  
+  
+</head><body><!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="/">
+        
+        <img width="200px" class="img-fluid" style="width: 5em;" src="/images/logo.png" alt="AI4Bhārat"></a>
+        
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/projects">Projects</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/articles">Articles</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/events">Events</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/join-us">Support us</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        
+        <a href="https://github.com/AI4Bharat" class="btn btn-sm btn-primary ml-3"><i class="ti-github"></i> GitHub</i></a>
+        
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+
+
+
+<section class="section pb-0">
+  <div class="container text-center">
+      <h1 class="display-3">Challenge: Signboard Translation from Vernacular Indian Languages</h1>
+      
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="content"><p>Can computer vision and natural language processing be put to transcribe sign boards on the fly making travel more accessible for all Indian languages?</p>
+<p><img src="../../images/projects/sign-board/mumbai-signboard-in-marathi-language-at-gateway-of-india-mumbai.jpg" alt="Cover Image"></p>
+<hr>
+<h3 id="problem-statement">Problem Statement</h3>
+<p>The goal of this project is to develop an App which translates the text written on a signboard to another language as desired by the user. The user will just point at the signboard using the camera of his/her phone and the App should then translate the text written on the signboard. We will first design a system which works for names (such as road names, city names, organisation names shop names etc.) which typically contain 1-2 words and are rarely longer than 4-5 words. We will cater to five languages in the first phase (i.e., the app can read and translate text from and to one of these five languages). In the next phase we will increase the number of languages to 15. Finally, in the last phase of the project, we will support translation of longer texts written on signboards, such as “Please do not throw garbage here”.</p>
+<h3 id="why-this-is-relevant-in-the-indian-context">Why this is relevant in the Indian context</h3>
+<p>India has 22 constitutionally recognised languages written in 13 different scripts. An average traveller, on a business or pleasure trip, often gets confused by the various signboards written in an unfamiliar language in a new region. This often spoils the experience of visiting a new place and the traveler goes back with not-so-fond memories. This often leads to language tussles wherein people of region A may feel that people of region B are not considerate enough to display signboards in their language and vice versa. In reality, this is simply a logistics problem. It is just impossible to have every signboard in  every city/town/village across the country written in 22 different languages. The real estate available on the signboard may allow the text to be written in 2-3 languages only. Hence there are bound to be many languages which will be left out. The resulting unfortunate, unpleasant and unproductive bitterness can easily be avoided by building better Apps. We believe that the App developed as a part of this project will allow people from different regions to read and understand text written in native languages as they are traveling across the country.</p>
+<h3 id="data-availability-and-collection">Data availability and collection</h3>
+<p>For building such an app, we need a dataset of many images containing some text written in Indian languages. Further, each image should have the following annotations:</p>
+<ol>
+<li>A bounding box indicating the region containing the text as shown in the images in the LHS figure.</li>
+<li>The text written inside this bounding box (i.e., a human needs to type out the text)</li>
+</ol>
+<p><img src="../../images/projects/sign-board/Indian-Sign-Board-Benchmark.jpg" alt="Indian SignBoard Data"></p>
+<p>The first set of annotations mentioned above will help in training a an object detection which can isolate/identify the region in the image containing the text. The second set of annotations will then be used to train an engine for image-to-text translation. Finally, once we have the text we need to transliterate/translate it to the desired languages. For training such an engine we need parallel data between the two languages. More specifically, for training a transliteration engine for English-to-Hindi we need training data containing multiple English-Hindi word pairs (for example, Mumbai-मुंबई, Chennai-चेन्नई and so on). Such data can be mine from <a href="https://www.wikidata.org/">https://www.wikidata.org/</a>. Similarly, for training a translation engine we need training data containing multiple English-Hindi sentence pairs (for example, “Please do not throw garbage here - कृपया यहां कचरा न फेंके” and so on). Such sentence parallel data is not easily available and we will have to collect such data as a part of the project. Some existing datasets for Indian language scene text detection are listed below:</p>
+<ul>
+<li>ICDAR2017</li>
+<li>IIIT Indian Language Scene Text (ILST) dataset</li>
+<li><a href="https://github.com/lifeisshubh/Awesome-Indic-Scene-Text-Dataset">https://github.com/lifeisshubh/Awesome-Indic-Scene-Text-Dataset</a></li>
+<li>Word Image dataset for 11 Indian scripts (<a href="http://mile.ee.iisc.ernet.in/Downloads/multi.zip">download link</a>)</li>
+</ul>
+<p>In addition, we have also created a large dataset as a part of this project, which are listed below.</p>
+<h3 id="initial-datasets-to-get-started">Initial datasets to get started</h3>
+<p>(You can use any dataset you want, this is just in-case you want something to start with)</p>
+<p><strong>1. Text Detection</strong> (Detecting bounding boxes containing text in the images)<br>
+Test Set: <a href="https://drive.google.com/open?id=1Z6Qxr-q-F54iYB2G1AyoDymBh64f5REZ">https://drive.google.com/open?id=1Z6Qxr-q-F54iYB2G1AyoDymBh64f5REZ</a><br>
+(428 real images with annotations)</p>
+<p><strong>2. Text Recognition</strong> (Getting the text from the detected crop)<br>
+Test Set: <a href="https://drive.google.com/open?id=1C0-mc0WAIdssS5KJwOjghaWaqiImZZUr">https://drive.google.com/open?id=1C0-mc0WAIdssS5KJwOjghaWaqiImZZUr</a><br>
+(1740 cropped word images from real pictures with annotations)</p>
+<p>Combined <strong>Synthetic Train Set</strong> for 1 &amp; 2:<br>
+Link: <a href="https://drive.google.com/open?id=1E5kI8CLoC-XffqQMTWwSpBIPp1Wb2tne">https://drive.google.com/open?id=1E5kI8CLoC-XffqQMTWwSpBIPp1Wb2tne</a><br>
+(consist of approx ~ 100,000 images with annotations)</p>
+<p>The above was generated using the following repo:<br>
+<a href="https://github.com/IngleJaya95/SynthTextHindi">https://github.com/IngleJaya95/SynthTextHindi</a></p>
+<p><strong>3. Transliteration</strong> (Transliterating Indic text to English)<br>
+Request NEWS2018 DATASET_04 from: <a href="http://workshop.colips.org/news2018/dataset.html">http://workshop.colips.org/news2018/dataset.html</a></p>
+<p><strong>4. Translation</strong><br>
+Link for En-Hi: <a href="http://www.cfilt.iitb.ac.in/iitb_parallel/">http://www.cfilt.iitb.ac.in/iitb_parallel/</a></p>
+<p>For other languages, download from relevant links of the works:<br>
+For Most Indian Languages:</p>
+<ul>
+<li>Mann Ki Baat &amp; Press Information Bureau Parallel Corpora: <a href="https://www.aclweb.org/anthology/2020.lrec-1.462/">https://www.aclweb.org/anthology/2020.lrec-1.462/</a></li>
+<li>PM India Speeches Parallel Text Corpora - <a href="https://arxiv.org/abs/2001.09907">https://arxiv.org/abs/2001.09907</a></li>
+</ul>
+<p><em>[ Credits for datasets 1 &amp; 2:</em> <a href="https://www.linkedin.com/in/shubhampateliet/"> <em>Shubham Patel</em> </a> <em>&amp;</em> <a href="https://www.linkedin.com/in/inglejaya95/"> <em>Jaya Ingle</em> </a> <em>]</em></p>
+<h3 id="existing-work---research-and-practice">Existing work - Research and Practice</h3>
+<table style="border: none;">
+  <tr>
+    <td> <p>
+The task at hand at top level can be split into three major divisions
+<ul>
+<li>Text region detection</li>
+<li>Recognition of individual characters</li>
+<li>Natural Language Processing for translation/transliteration</li>
+</ul>
+<p>In CV, given an image, the system should be able to cull-out the regions with text and use them for further processing.
+</p> </td>
+<td width="40%">
+<img src="../../images/projects/sign-board/sign-board-transliteration.jpg">
+</td></p>
+  </tr>
+</table>
+<p>There are many techniques and features handcrafted for text detection like stroke Width Transform(SWT)[6] &amp; Maximally Stable Extremal Regions (MSER) [5],  assuming that the character features like stroke width, uniform size and chromatic consistency. And features are used for Connected Component Analysis (CCA) to extract and separate out each text components.</p>
+<p>Other algorithm like Sliding window technique where windows of different sizes are slid on image for detecting the presence of text, and graph based grouping algorithm is applied to combine them into chunks texts to group them as words.</p>
+<p>And with Deep Learning, Problem when considered as object detection, is mainly handled in two ways. The first approach is detecting word by word and then processing to get the characters in each word. The second approach is detecting each character first and then group them into words. Another Deep Learning approach is to classify pixel-wise if it belongs to a text or not and then use 8-Nearest neighbour approach to instance segment each character [7]</p>
+<p>For Translation &amp; Transliteration tradition NLP based solution where used for long time, this again with Deep Learning sequential models like RNN has gained thrust in research field for better accuracy. One of the earliest works is by treating it as object detection problem[18]. For transliteration  Deep Belief networks [17] were used. Currently recent works are mainly focused on Deep Sequence to sequence models, attentional mechanisms are predominantly used to improve quality [19] [20].</p>
+<p><img src="../../images/projects/sign-board/sign-board-transliteration-pipeline.jpg" alt="SignBoard Transliteration Pipeline"></p>
+<p>Most observed research publications and benchmarks point towards work in English script Scene-text. However, our problem deals with 13 scripts, the most popular of which being Devanagari. Other scripts such as Bengali, Tamil and Malayalam also have widespread usage within the signage in our country. There few works related to Indian Scripts [4]. One of limitation Datasets availability for Indian Languages.</p>
+<p><img src="../../images/projects/sign-board/system.jpg" alt="SignBoard Translation System"></p>
+<h4 id="important-works-and-repositories">Important works and Repositories</h4>
+<ol>
+<li>Detection <em>Detecting the presence of text within a given image and isolating the region containing the text enclosed in a bounding box</em></li>
+</ol>
+<ul>
+<li>Fully convolutional text detection [8] <a href="https://github.com/stupidZZ/FCN_Text">FCN_Text</a></li>
+<li>An Efficient and Accurate Scene Text Detector [9] <a href="https://github.com/zxytim/EAST">EAST</a></li>
+<li>Detecting curve text[10] <a href="https://github.com/Yuliang-Liu/Curve-Text-Detector">Curve-Text-Detector</a></li>
+<li>Single Shot Text Detector with Regional Attention [11] <a href="https://github.com/BestSonny/SSTD">SSTD</a></li>
+<li>Detecting Text in Natural Image with Connectionist Text Proposal Network [12] <a href="https://github.com/tianzhi0549/CTPN">CTPN</a></li>
+<li>Geometry-Aware Scene Text Detection [13] <a href="https://github.com/zlmzju/itn">ITN</a></li>
+</ul>
+<ol start="2">
+<li>Recognition <em>The process of converting text-regions from images into text characters.</em></li>
+</ol>
+<ul>
+<li>Text recognition based on the [14] <a href="https://github.com/bgshih/crnn">CRNN</a></li>
+</ul>
+<ol start="3">
+<li>End-to-End <em>Systems that handle both Text Detection and Recognition in a unified manner.</em></li>
+</ol>
+<ul>
+<li>Towards Semi-Supervised End-to-End Scene Text Recognition [15] <a href="https://github.com/Bartzi/see">SEE</a></li>
+<li>An End-to-End Trainable Scene Text Localization and Recognition Framework [16] <a href="https://github.com/MichalBusta/DeepTextSpotter">DeepTextSpotter</a></li>
+</ul>
+<table style="border: none;">
+  <tr>
+    <td>
+        <figure style="text-align: center">
+            <img src="../../images/projects/sign-board/end2end.png" style="width:100%;">
+            <figcaption>Mainstream End-to-End frameworks (above)</figcaption>
+        </figure>
+    </td>
+    <td width="50%">
+      <figure style="text-align: center">
+          <img src="../../images/projects/sign-board/detection.jpg" style="width:100%;">
+          <figcaption>Process flow of some of the popular detection methods (above)</figcaption>
+      </figure>
+      <figure style="text-align: center">
+          <img src="../../images/projects/sign-board/recognition.png" style="width:100%;">
+          <figcaption>Illustration some of the popular text recognition methods (above)</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+<h3 id="technical-milestones">Technical Milestones</h3>
+<p>For all the Indian languages, the following procedure is to be followed, creating a generic and extensible framework for cross-language text recognition and translation:</p>
+<ol>
+<li>Text corpus collection for a language.</li>
+<li>Synthetic Data Generation (only for training) using (1).</li>
+<li>Test Images Collection/Scraping for the language.</li>
+<li>Designing a Text Detector Model to detect the blocks in an image with text.</li>
+<li>Designing a Text Recognition Model to extract the Unicode text representation of the patches from the text detector module.</li>
+<li>Text post-processing to remove redundancies and language-specific groupings.</li>
+<li>Translation / Transliteration of the recognized text to English or any intermediate language.</li>
+</ol>
+<p>Depending upon the compute of the designed models, the models can be quantized, pruned and compressed using existing mobile deep learning frameworks like Tensorflow Lite and deploy an end-to-end system in an Android application for Real-time applications.</p>
+<h3 id="references">References</h3>
+<p>[1] Long, S., He, X., &amp; Ya, C. (2018). Scene text detection and recognition: The deep learning era. arXiv preprint arXiv:1811.04256.</p>
+<p>[2] Tounsi, M., Moalla, I., Lebourgeois, F., &amp; Alimi, A. M. (2018). Multilingual Scene Character Recognition System using Sparse Auto-Encoder for Efficient Local Features Representation in Bag of Features. arXiv preprint arXiv:1806.07374.</p>
+<p>[3] Bhunia, A. K., Kumar, G., Roy, P. P., Balasubramanian, R., &amp; Pal, U. (2018). Text recognition in scene image and video frame using Color Channel selection. Multimedia Tools and Applications, 77(7), 8551-8578.</p>
+<p>[4]Mathew, M., Jain, M., &amp; Jawahar, C. V. (2017, November). Benchmarking scene text recognition in Devanagari, Telugu and Malayalam. In 2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR) (Vol. 7, pp. 42-46). IEEE.</p>
+<p>[5] Neumann, L. and J. Matas, A method for text localization and recognition in real-world images. In Proceedings of the 10th Asian Conference on Computer Vision - Volume Part III, ACCV’10. Springer-Verlag, Berlin, Heidelberg, 2011. ISBN 978-3-642-19317-0.</p>
+<p>[6] Ofek, E., B. Epshtein, and Y. Wexler, Detecting text in natural scenes with stroke width transform. In 2010 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, Los Alamitos, CA, USA, 2010.0</p>
+<p>[7] Dan Deng, Haifeng Liu, Xuelong Li, and Deng Cai. Pixellink: Detecting scene text via instance segmentation. CoRR, abs/1801.01315, 2018.</p>
+<p>[8] Zhang, Zheng, et al. &ldquo;Multi-oriented text detection with fully convolutional networks.&rdquo; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016.</p>
+<p>[9] Zhou, X., Yao, C., Wen, H., Wang, Y., Zhou, S., He, W., &amp; Liang, J. (2017). EAST: an efficient and accurate scene text detector. In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition (pp. 5551-5560).</p>
+<p>[10] Yuliang, L., Lianwen, J., Shuaitao, Z., &amp; Sheng, Z. (2017). Detecting curve text in the wild: New dataset and new solution. arXiv preprint arXiv:1712.02170.</p>
+<p>[11] He, P., Huang, W., He, T., Zhu, Q., Qiao, Y., &amp; Li, X. (2017). Single shot text detector with regional attention. In Proceedings of the IEEE International Conference on Computer Vision (pp. 3047-3055).</p>
+<p>[12] Tian, Z., Huang, W., He, T., He, P., &amp; Qiao, Y. (2016, October). Detecting text in natural image with connectionist text proposal network. In European conference on computer vision (pp. 56-72). Springer, Cham.</p>
+<p>[13] Wang, F., Zhao, L., Li, X., Wang, X., &amp; Tao, D. (2018). Geometry-aware scene text detection with instance transformation network. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1381-1389).</p>
+<p>[14] Shi, B., Bai, X., &amp; Yao, C. (2016). An end-to-end trainable neural network for image-based sequence recognition and its application to scene text recognition. IEEE transactions on pattern analysis and machine intelligence, 39(11), 2298-2304.</p>
+<p>[15] Bartz, C., Yang, H., &amp; Meinel, C. (2018, April). SEE: towards semi-supervised end-to-end scene text recognition. In Thirty-Second AAAI Conference on Artificial Intelligence.</p>
+<p>[16] Busta, M., Neumann, L., &amp; Matas, J. (2017). Deep textspotter: An end-to-end trainable scene text localization and recognition framework. In Proceedings of the IEEE International Conference on Computer Vision (pp. 2204-2212).</p>
+<p>[17] Deselaers, T., Hasan, S., Bender, O., &amp; Ney, H. (2009, March). A deep learning approach to machine transliteration. In <em>Proceedings of the Fourth Workshop on Statistical Machine Translation</em> (pp. 233-241). Association for Computational Linguistics.</p>
+<p>[18] Duygulu, P., Barnard, K., de Freitas, J. F., &amp; Forsyth, D. A. (2002, May). Object recognition as machine translation: Learning a lexicon for a fixed image vocabulary. In <em>European conference on computer vision</em> (pp. 97-112). Springer, Berlin, Heidelberg.</p>
+<p>[19] Rosca, M., &amp; Breuel, T. (2016). Sequence-to-sequence neural network models for transliteration. <em>arXiv preprint arXiv:1610.09565</em> .</p>
+<p>[20] Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., &hellip; &amp; Klingner, J. (2016). Google&rsquo;s neural machine translation system: Bridging the gap between human and machine translation. <em>arXiv preprint arXiv:1609.08144</em> .</p>
+<h3 id="current-team">Current Team</h3>
+<table style="width:50%; margin-right:50%;">
+  <tr>
+    <td align="center" >
+      <img src="../../images/mitesh.png" width="75px;" class="rounded-circle" style="margin-bottom: 0;"/>
+      <br/><b>Mentor</b>
+    </td>
+    <td align="center" style="vertical-align: middle;"> <h4>
+      Mitesh Khapra
+      <br/>
+      IIT-Madras
+      <br/>
+      (<a href="https://www.linkedin.com/in/mitesh-khapra-3bb3032/" style="color: orange">LinkedIn</a>)
+    </h4></td>
+  </tr>
+  <tr>
+    <td align="center" >
+      <img src="https://github.com/gokulkarthik.png" width="75px;" class="rounded-circle" style="margin-bottom: 0;"/>
+      <br/><b>Lead</b>
+    </td>
+    <td align="center" style="vertical-align: middle;"> <h4>
+      Gokul Karthik
+      <br/>
+      ML Developer, TCS Research & Innovation
+      <br/>
+      (<a href="https://www.linkedin.com/in/gokulkarthik/" style="color: orange">LinkedIn</a>)
+    </h4></td>
+  </tr>
+</table>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="bg-light section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">Organization</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/articles/case/">About Us</a></li>
+          
+          <li><a href="/projects">Active Projects</a></li>
+          
+          <li><a href="/events">Events</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">Projects</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/join-us">Apply to join</a></li>
+          
+          <li><a href="/articles">Articles</a></li>
+          
+          <li><a href="https://github.com/AI4Bharat">Contribute Directly</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <h3 class="mb-4">More</h3>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          
+          <li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+          
+          <li><a href="https://ai4bharat.squarespace.com">Old Website</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <a class="d-block mb-3" href="/"><img width="200px"  class="img-fluid" src="/images/logo.png" alt="AI4Bhārat"></a>
+        <p class="mb-4">Address: IIT-Madras Research Park, Taramani, Chennai-600113</p>
+        
+        <ul class="list-inline social-icons">
+          
+          <li class="list-inline-item"><a href="https://www.facebook.com/onefourthlabs"><i class="ti-facebook"></i></a></li>
+          
+          <li class="list-inline-item"><a href="https://twitter.com/ai4bharat"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a href="https://www.linkedin.com/showcase/ai4bharat"><i class="ti-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="border-top border-default text-center py-4 mt-4">
+      <small class="content"><a href="https://github.com/AI4Bharat/ai4bharat.org">Made in ❤️ with open-source by AI4Bhārat</a></small>
+    </div>
+  </div>
+</footer>
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script></body>
+
+</html>

@@ -13,7 +13,7 @@
       <pubDate>Thu, 27 Jun 2019 10:07:21 +0600</pubDate>
       
       <guid>/articles/case/</guid>
-      <description>FOUNDERS: AI4Bharat is a voluntary community founded by us - Mitesh Khapra and Pratyush Kumar.</description>
+      <description>FOUNDERS:  AI4Bharat is a voluntary community founded by us - Mitesh Khapra and Pratyush Kumar.</description>
     </item>
     
     <item>
@@ -70,6 +70,24 @@
       <guid>/articles/tn-egovernance/</guid>
       <description>A case study of successful e-governance initiatives by Government of Tamil Nadu.
  Governments have to efficiently cater to a large number of services such as licensing, regulatory services, and citizen services across various domains such as health, education, and agriculture.</description>
+    </item>
+    
+    <item>
+      <title>Challenge: Segmenting Rural Roadways from Satellite Imagery</title>
+      <link>/articles/segmenting-rural-roadways-from-satellite-imagery/</link>
+      <pubDate>Sat, 01 Jun 2019 10:07:17 +0600</pubDate>
+      
+      <guid>/articles/segmenting-rural-roadways-from-satellite-imagery/</guid>
+      <description>Interconnectivity in rural and semi-urban areas is required to understand progress of road construction and also for planning expansions.</description>
+    </item>
+    
+    <item>
+      <title>Challenge: Signboard Translation from Vernacular Indian Languages</title>
+      <link>/articles/sign-board/</link>
+      <pubDate>Sat, 01 Jun 2019 10:07:17 +0600</pubDate>
+      
+      <guid>/articles/sign-board/</guid>
+      <description>Can computer vision and natural language processing be put to transcribe sign boards on the fly making travel more accessible for all Indian languages?</description>
     </item>
     
   </channel>
